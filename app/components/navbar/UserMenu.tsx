@@ -25,7 +25,7 @@ const UserMenu = () => {
         text-sm
         font-semibold
         py-3
-        px04
+        px-4
         rounded-full
         hover:bg-neutral-100
         transition
