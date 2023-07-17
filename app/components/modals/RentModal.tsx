@@ -212,15 +212,15 @@ const RentModal = () => {
   // SECTION PRICE
   if (step == STEPS.PRICE) {
     bodyContent = (
-      <div className="flex flex-col gap-9">
+      <div className="flex flex-col gap-9 text-black">
         <Heading
           title="Now, set your price."
-          subtitle="How much hdo you charge a night?"
+          subtitle="How much do you charge a night?"
         />
         <Input
           id="price"
           label="Price"
-          formatPrice
+          formatPrice={true}
           type="number"
           disabled={isLoading}
           register={register}
