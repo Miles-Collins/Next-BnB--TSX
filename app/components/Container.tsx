@@ -8,6 +8,7 @@ const Container: React.FC<ContainerProps> = ({ children }) => {
   return (
     <div
       className="
+      bg-white
   text-black
   max-w-[2520px]
   mx-auto
