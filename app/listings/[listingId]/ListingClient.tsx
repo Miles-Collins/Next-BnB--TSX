@@ -80,8 +80,6 @@ const ListingClient: React.FC<ListingClientProps> = ({
     .finally(() => {
       setIsLoading(false)
     })
-
-
   }, [currentUser, dateRange, listing?.id, loginModal, router, totalPrice])
 
   // Watches changes to calendar, and updates the price when someone changes it
