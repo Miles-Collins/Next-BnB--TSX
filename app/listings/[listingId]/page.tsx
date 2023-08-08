@@ -3,6 +3,7 @@ import ClientOnly from "@/app/components/ClientOnly";
 import EmptyState from "@/app/components/EmptyState";
 import ListingClient from "./ListingClient";
 import getCurrentUser from "@/app/actions/getCurrentUser";
+import getReservations from "@/app/actions/getReservations";
 
 // Defining an interface 'IParams' with an optional property 'listingId' of type string
 interface IParams {
@@ -13,6 +14,7 @@ interface IParams {
 const ListingPage = async ({ params }: { params: IParams }) => {
   // Asynchronously fetching the listing using 'getListingById' with the 'params' passed as an argument
   const listing = await getListingById(params);
+  const reservations = await getReservations(params)
   const currentUser = await getCurrentUser()
 
   // If the listing is not found or does not exist
@@ -30,7 +32,7 @@ const ListingPage = async ({ params }: { params: IParams }) => {
   // If the listing is found, return the JSX element with the title of the listing in a 'div' element with a class 'text-black'
   return (
     <ClientOnly>
-      <ListingClient listing={listing} currentUser={currentUser} />
+      <ListingClient listing={listing} currentUser={currentUser} reservations={reservations}/>
     </ClientOnly>
   )
 };
